@@ -13,7 +13,10 @@ return new class extends Migration
     {
         Schema::create('product_per_allergies', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->unsignedBigInteger('product_id');
+            $table->unsignedBigInteger('allergen_id');
+            $table->foreign('product_id')->references('id')->on('products');
+            $table->foreign('allergen_id')->references('id')->on('allergies');
         });
     }
 
