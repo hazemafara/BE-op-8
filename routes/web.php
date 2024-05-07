@@ -21,3 +21,4 @@ Route::get('/', function () {
 Route::get('/allergies', [allergyController::class, 'index'])->name('index');
 Route::get('/allergy/opdatum', [allergyController::class, 'getProductByAllergy'])->name('index');
 
+

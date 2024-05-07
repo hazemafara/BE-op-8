@@ -11,26 +11,28 @@ class allergyController extends Controller
 {
     
     public function index(){
-        $results = Warehouse::select('products.name as product_name', 'allergies.name as allergen_name', 'allergies.description as allergen_description', 'warehouses.quantity_on_hand')
-            ->join('products', 'warehouses.product_id', '=', 'products.id')
-            ->join('product_per_allergies', 'products.id', '=', 'product_per_allergies.product_id')
-            ->join('allergies', 'product_per_allergies.allergen_id', '=', 'allergies.id')
-            ->orderBy('allergies.name', 'asc')
-            ->get();
+        $results = Warehouse::select('warehouses.id', 'products.name as product_name', 'allergies.name as allergen_name', 'allergies.description as allergen_description', 'warehouses.quantity_on_hand')
+        ->join('products', 'warehouses.product_id', '=', 'products.id')
+        ->join('product_per_allergies', 'products.id', '=', 'product_per_allergies.product_id')
+        ->join('allergies', 'product_per_allergies.allergen_id', '=', 'allergies.id')
+        ->orderBy('allergies.name', 'asc')
+        ->get();
 
             $allegrns = Allergie::all();
         return view('allergies', ['results' => $results, 'allegrns' => $allegrns]);
     }
      public function getProductByAllergy(Request $request){
-        $results = Warehouse::select('products.name as product_name', 'allergies.name as allergen_name', 'allergies.description as allergen_description', 'warehouses.quantity_on_hand')
+        $allergenId = $request->input('allergen');
+
+        $results = Warehouse::select('warehouses.id','products.name as product_name', 'allergies.name as allergen_name', 'allergies.description as allergen_description', 'warehouses.quantity_on_hand')
             ->join('products', 'warehouses.product_id', '=', 'products.id')
             ->join('product_per_allergies', 'products.id', '=', 'product_per_allergies.product_id')
             ->join('allergies', 'product_per_allergies.allergen_id', '=', 'allergies.id')
-            ->where('allergies.id', $request->allergen_id)
+            ->where('allergies.id', $allergenId)
             ->orderBy('allergies.name', 'asc')
             ->get();
 
             $allegrns = Allergie::all();
-        return view('allergy', ['results' => $results, 'allegrns' => $allegrns]);
+        return view('allergy', ['results' => $results, 'allegrns' => $allegrns, 'request' => $request]);
 }
 }

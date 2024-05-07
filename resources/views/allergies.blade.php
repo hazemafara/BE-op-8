@@ -15,6 +15,8 @@
             <th>allergie</th>
             <th>omschrijving</th>
             <th>aantal</th>
+                        <th>info</th>
+
             <!-- Add more column headers as needed -->
         </tr>
     </thead>
@@ -25,6 +27,7 @@
                 <td>{{ $result->allergen_name }}</td>
                 <td>{{ $result->allergen_description }}</td>
                 <td>{{ $result->quantity_on_hand }}</td>
+                <td><a href="/leverancier/{{$result->id}}">test</td>
 
                 <!-- Add more columns as needed -->
             </tr>
