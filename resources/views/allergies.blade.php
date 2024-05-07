@@ -1,5 +1,5 @@
 
-<form method="GET" action="{{ route('index') }}">
+<form method="GET" action="/allergy/opdatum">
     <select name="allergen">
         @foreach ($allegrns as $allergen)
             <option value="{{ $allergen->id }}">{{ $allergen->name }}</option>

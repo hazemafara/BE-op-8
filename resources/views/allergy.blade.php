@@ -16,7 +16,6 @@
             <th>omschrijving</th>
             <th>aantal</th>
             <th>info</th>
-            <!-- Add more column headers as needed -->
         </tr>
     </thead>
     <tbody>
@@ -28,7 +27,6 @@
                 <td>{{ $result->quantity_on_hand }}</td>
                 <td><a href="/leverancier/{{$result->id}}">test</td>
 
-                <!-- Add more columns as needed -->
             </tr>
         @endforeach
     </tbody>

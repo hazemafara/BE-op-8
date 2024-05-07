@@ -17,8 +17,8 @@ return new class extends Migration
             $table->string('contact_person');
             $table->string('supplier_number');
             $table->string('mobile');
-            $table->unsignedBigInteger('contact_id');
-            $table->foreign('contact_id')->references('id')->on('contacts')->nullable();
+            $table->unsignedBigInteger('contact_id')->nullable();
+            $table->foreign('contact_id')->references('id')->on('contacts');
         });
     }
 

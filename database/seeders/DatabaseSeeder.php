@@ -60,6 +60,7 @@ class SupplierSeeder extends Seeder
         Supplier::create(['name' => 'Basset', 'contact_person' => 'Joyce Stelterberg', 'supplier_number' => 'L1023845773', 'mobile' => '06-48293823', 'contact_id' => 4]);
         Supplier::create(['name' => 'De Bron', 'contact_person' => 'Remco Veenstra', 'supplier_number' => 'L1023857736', 'mobile' => '06-34291234', 'contact_id' => 5]);
         Supplier::create(['name' => 'Quality Street', 'contact_person' => 'Johan Nooij', 'supplier_number' => 'L1029234586', 'mobile' => '06-23458456', 'contact_id' => 6]);
+        Supplier::create(['name' => 'Hom Ken Food', 'contact_person' => 'Hom Ken', 'supplier_number' => 'L1029234599', 'mobile' => '06-23458477', 'contact_id' => null]);
     }
 }
 
@@ -81,7 +82,7 @@ class ProductSeeder extends Seeder
         Product::create(['name' => 'Drop Munten', 'barcode' => '8719587322345']);
         Product::create(['name' => 'Kruis Drop', 'barcode' => '8719587322265']);
         Product::create(['name' => 'Zoute Ruitjes', 'barcode' => '8719587323256']);
-        Product::create(['name' => 'Drop ninja’s', 'barcode' => '8719587323277']);
+        Product::create(['name' => 'Drop ninjas', 'barcode' => '8719587323277']);
     }
 }
 
@@ -103,6 +104,7 @@ class WarehouseSeeder extends Seeder
         Warehouse::create(['product_id' => 11, 'packaging_unit' => 2, 'quantity_on_hand' => 367]);
         Warehouse::create(['product_id' => 12, 'packaging_unit' => 1, 'quantity_on_hand' => 467]);
         Warehouse::create(['product_id' => 13, 'packaging_unit' => 5, 'quantity_on_hand' => 20]);
+        
     }
 }
 
@@ -110,7 +112,6 @@ class ProductPerAllergieSeeder extends Seeder
 {
     public function run()
     {
-        // Seed product per allergen here
         ProductPerAllergie::create(['product_id' => 1, 'allergen_id' => 2]);
         ProductPerAllergie::create(['product_id' => 1, 'allergen_id' => 1]);
         ProductPerAllergie::create(['product_id' => 1, 'allergen_id' => 3]);
@@ -149,5 +150,6 @@ class ProductPerSupplierSeeder extends Seeder
         ProductPerSupplier::create(['supplier_id' => 5, 'product_id' => 11, 'delivery_date' => '2023-04-19', 'quantity' => 60, 'next_delivery_date' => '2023-04-26']);
         ProductPerSupplier::create(['supplier_id' => 5, 'product_id' => 12, 'delivery_date' => '2023-04-11', 'quantity' => 45, 'next_delivery_date' => null]);
         ProductPerSupplier::create(['supplier_id' => 5, 'product_id' => 13, 'delivery_date' => '2023-04-12', 'quantity' => 23, 'next_delivery_date' => null]);
+        ProductPerSupplier::create(['supplier_id' => 7, 'product_id' => 14, 'delivery_date' => '2023-04-14', 'quantity' => 20, 'next_delivery_date' => null]);
     }
 }
