@@ -45,5 +45,6 @@ public function getSupplierByProduct($productId){
         ->join('product_per_suppliers', 'suppliers.id', '=', 'product_per_suppliers.supplier_id')
         ->where('product_per_suppliers.product_id', $productId)
         ->get();
+        return view("leverancier",['results' => $results]);
 }
 }
