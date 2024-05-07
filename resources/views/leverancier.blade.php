@@ -20,7 +20,7 @@
             <td>{{ $result->street }}</td>
             <td>{{ $result->house_number }}</td>
         </tr>
-        {{-- @break; --}}
+        @break;
         @endforeach
     </tbody>
 </table>
