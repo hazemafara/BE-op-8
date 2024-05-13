@@ -1,3 +1,27 @@
+<style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    tr:hover {
+        background-color: #ddd;
+    }
+</style>
 
 <form method="GET" action="/allergy/opdatum">
     <select name="allergen">
@@ -11,11 +35,11 @@
 <table>
     <thead>
         <tr>
-            <th>product name</th>
-            <th>allergie</th>
-            <th>omschrijving</th>
-            <th>aantal</th>
-            <th>info</th>
+            <th>Product Name</th>
+            <th>Allergie</th>
+            <th>Omschrijving</th>
+            <th>Aantal</th>
+            <th>Info</th>
         </tr>
     </thead>
     <tbody>
@@ -25,8 +49,7 @@
                 <td>{{ $result->allergen_name }}</td>
                 <td>{{ $result->allergen_description }}</td>
                 <td>{{ $result->quantity_on_hand }}</td>
-                <td><a href="/leverancier/{{$result->id}}">test</td>
-
+                <td><a href="/leverancier/{{$result->id}}">?</a></td>
             </tr>
         @endforeach
     </tbody>

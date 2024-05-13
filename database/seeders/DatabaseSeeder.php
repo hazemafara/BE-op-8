@@ -104,6 +104,7 @@ class WarehouseSeeder extends Seeder
         Warehouse::create(['product_id' => 11, 'packaging_unit' => 2, 'quantity_on_hand' => 367]);
         Warehouse::create(['product_id' => 12, 'packaging_unit' => 1, 'quantity_on_hand' => 467]);
         Warehouse::create(['product_id' => 13, 'packaging_unit' => 5, 'quantity_on_hand' => 20]);
+        Warehouse::create(['product_id' => 14, 'packaging_unit' => Null, 'quantity_on_hand' => Null]);
         
     }
 }

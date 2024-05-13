@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('warehouses', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('product_id');
-            $table->decimal('packaging_unit', 5, 2);
+            $table->decimal('packaging_unit', 5, 2)->nullable();
             $table->integer('quantity_on_hand')->nullable();
             $table->foreign('product_id')->references('id')->on('products');
         });
