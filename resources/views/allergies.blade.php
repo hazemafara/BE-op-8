@@ -21,6 +21,8 @@
         </tr>
     </thead>
     <tbody>
+                {{-- {{dd($results)}} --}}
+
         @foreach ($results as $result)
             <tr>
                 <td>{{ $result->product_name }}</td>
