@@ -17,7 +17,7 @@ class allergyController extends Controller
             ->join('products', 'warehouses.product_id', '=', 'products.id')
             ->join('product_per_allergies', 'products.id', '=', 'product_per_allergies.product_id')
             ->join('allergies', 'product_per_allergies.allergen_id', '=', 'allergies.id')
-            ->orderBy('allergies.name', 'asc')
+            ->orderBy('products.name', 'asc')
             ->get();
 
         // Retrieve all allergens for the dropdown

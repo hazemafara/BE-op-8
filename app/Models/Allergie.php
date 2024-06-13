@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Allergie extends Model
 {
+    
     public $timestamps = false;
     use HasFactory;
 }
